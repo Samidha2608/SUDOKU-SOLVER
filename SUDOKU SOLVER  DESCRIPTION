@@ -1,0 +1,23 @@
+Intuition:
+We need to fill the empty cells in the Sudoku grid while ensuring that no number repeats in any row, column, or 3x3 sub-grid. Backtracking will help explore potential solutions by placing a number in an empty cell and verifying if it satisfies Sudoku constraints. If it doesn't, we backtrack and try the next possible value.
+
+Approach:
+We will check for empty cells in the Sudoku grid.
+For each empty cell, we will attempt to place a number from 1 to 9.
+For each number, we will check if it is valid by ensuring it doesn't appear in the same row, column, or 3x3 sub-grid.
+If a number is valid, we place it in the cell and recursively attempt to solve the next empty cell.
+If placing a number leads to an unsolvable grid later, we backtrack by removing the number and trying the next possibility.
+This process continues until the puzzle is either solved or found unsolvable.
+
+Step-by-step Approach:
+Traverse the grid to find an empty cell.
+For each empty cell, try placing numbers 1 through 9.
+Validate the placement of the number by checking the row, column, and sub-grid constraints.
+If valid, recursively try to solve the rest of the grid.
+If the grid becomes unsolvable, remove the number and try the next one.
+Once the grid is completely filled, the puzzle is solved.
+
+Complexity:
+Time Complexity: O(9^(n*n))
+
+Space Complexity: O(n*n)
